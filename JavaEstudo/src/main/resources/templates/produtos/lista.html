@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Produtos</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 p-8">
+<div class="max-w-4xl mx-auto">
+    <div class="bg-white shadow-xl rounded-2xl p-8">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-3xl font-extrabold text-green-600">Catálogo de Produtos</h2>
+            <div class="space-x-3">
+                <a href="/pessoas" class="text-blue-600 hover:underline font-medium">← Voltar para Pessoas</a>
+                <a href="/produtos/novo" class="bg-green-500 text-white px-5 py-2 rounded-full hover:bg-green-600 transition shadow-lg">+ Novo</a>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-4">
+            <div th:each="prod : ${produtos}" class="flex justify-between items-center p-4 border-l-4 border-green-500 bg-green-50 rounded-r-lg shadow-sm">
+                <div>
+                    <span class="text-xs font-bold text-green-700 uppercase" th:text="'ID: ' + ${prod.id}"></span>
+                    <h3 class="text-lg font-bold text-gray-800" th:text="${prod.nome}"></h3>
+                </div>
+                <div class="text-xl font-mono font-bold text-gray-700" th:text="${'R$ ' + prod.valor}"></div>
+            </div>
+            <div th:if="${#lists.isEmpty(produtos)}" class="text-center py-10 text-gray-400">
+                O estoque está vazio.
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
