@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-6">
+
+<div class="max-w-4xl w-full">
+    <div class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-slate-900 tracking-tight mb-2">Bem-vindo ao Sistema</h1>
+        <p class="text-slate-500">Selecione uma categoria para gerenciar seus dados</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <a th:href="@{/pessoas}" class="group relative bg-white p-8 rounded-3xl shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
+            <div class="flex items-center space-x-4">
+                <div class="p-3 bg-indigo-50 rounded-2xl group-hover:bg-indigo-600 transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-800">Gerenciar Pessoas</h2>
+                    <p class="text-sm text-slate-500 mt-1">Lista, cadastro e edição de usuários.</p>
+                </div>
+            </div>
+            <div class="mt-6 flex items-center text-indigo-600 font-semibold text-sm">
+                Acessar módulo
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </div>
+        </a>
+
+        <a th:href="@{/produtos}" class="group relative bg-white p-8 rounded-3xl shadow-sm border border-slate-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden">
+            <div class="flex items-center space-x-4">
+                <div class="p-3 bg-emerald-50 rounded-2xl group-hover:bg-emerald-600 transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                </div>
+                <div>
+                    <h2 class="text-xl font-bold text-slate-800">Gerenciar Produtos</h2>
+                    <p class="text-sm text-slate-500 mt-1">Controle de estoque e catálogo.</p>
+                </div>
+            </div>
+            <div class="mt-6 flex items-center text-emerald-600 font-semibold text-sm">
+                Acessar módulo
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </div>
+        </a>
+
+    </div>
+
+    <div class="mt-12 text-center text-slate-400 text-xs tracking-widest uppercase">
+        &copy; 2026 Zimmermann Automotiva | Engenharia de Software
+    </div>
+</div>
+</body>
+</html>
